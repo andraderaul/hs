@@ -1,5 +1,6 @@
-hello_world::IO()
-hello_world = putStrLn "Hello World"
+helloWorld :: IO ()
+helloWorld = putStrLn "Hello World"
 
+main :: IO ()
 main = do
-	hello_world
+  helloWorld

@@ -1,5 +1,7 @@
-f arr = sum([x | x <- arr, x `mod` 2 == 1])
+f :: Integral a => [a] -> a
+f arr = sum ([x | x <- arr, x `mod` 2 == 1])
 
+main :: IO ()
 main = do
-	inputdata <- getContents
-	putStrLn $ show $ f $ map (read :: String -> Int) $ lines inputdata
+  inputdata <- getContents
+  print (f $ map (read :: String -> Int) $ lines inputdata)

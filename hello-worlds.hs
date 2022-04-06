@@ -1,11 +1,13 @@
-show_hello_world = putStrLn "Hello World"
+showHelloWorld :: IO ()
+showHelloWorld = putStrLn "Hello World"
 
-hello_worlds 1 = show_hello_world
-hello_worlds n = do
-        show_hello_world
-        hello_worlds (n - 1)
+helloWorlds :: (Eq a, Num a) => a -> IO ()
+helloWorlds 1 = showHelloWorld
+helloWorlds n = do
+  showHelloWorld
+  helloWorlds (n - 1)
 
-main :: IO()
+main :: IO ()
 main = do
-    n <- readLn :: IO Int
-    hello_worlds n
+  n <- readLn :: IO Int
+  helloWorlds n
